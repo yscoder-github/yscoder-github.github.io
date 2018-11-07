@@ -17,7 +17,7 @@ tags:
 
 
 ##### 雪球的Feed流样式
-![avatar](../img/xueqiu_feed_spider/pic_of_feed.png)
+![avatar](img/xueqiu_feed_spider/pic_of_feed.png)
 
 如上图所示为用户为从雪球首页截取出来的信息流，从图中可以看出雪球的信息流包含如下几个模块:
 * 头条
@@ -33,13 +33,13 @@ tags:
 
 ---  
 雪球的请求地址如下：
-![avatar](../img/xueqiu_feed_spider/request.png)
+![avatar](img/xueqiu_feed_spider/request.png)
 
 
  [feed流请求地址](https://xueqiu.com/v4/statuses/public_timeline_by_category.json?since_id=-1&max_id=-1&count=10&category=104)
 
 
-![avatar](../img/xueqiu_feed_spider/data_sample.png)
+![avatar](img/xueqiu_feed_spider/data_sample.png)
 #### response中的关键字段
 * list
 * addition
