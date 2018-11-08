@@ -131,5 +131,5 @@ def parse_response(self, response):
 USER_AGENT = "Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus S Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" # 设置用户代理
 ```
 
-具体代码见 [github雪球信息流爬虫](https://github.com/yscoder-github/xueqiu_timeline_spider),欢迎fork＆star
+具体代码见 [github雪球信息流爬虫](https://github.com/yscoder-github/xueqiu_crawl),欢迎fork＆star
 　　　
