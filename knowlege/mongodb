@@ -1,0 +1,40 @@
+##### mongodb启动方式
+[引用地址](https://blog.csdn.net/AustinBoris/article/details/70098199)
+
+在Ubuntu下mongodb的安装和启动
+
+**1. 终端输入命令：**
+> sudo apt-get install mongodb
+
+> 如果出现找不到的问题，请输入以下命令更新软件库：
+
+> sudo apt-get update
+
+** 2.安装完成后，可以通过以下命令来查看是否已经启动mongodb**
+
+> pgrep mongo -l
+
+** 3.进入mongodb**
+> mongo
+
+** 4.退出mongodb（前提：已经进入mongodb的命令行）** s
+> exit
+
+#### 重启系统后的mongodb的启动方式
+** 1.  查看mongodb的安装位置 **
+> locate mongo
+
+** 2、进入mongodb的安装目录，然后输入命令 **
+> ./mongod --dbpath /var/lib/mongodb/
+ --logpath /var/log/mongodb/mongodb.log --logappend &
+
+> –dbpath：指定mongo的数据库文件在哪个文件夹
+
+> –logpath：指定mongo的log日志是哪个，这里log一定要指定到具体的文件名
+
+> –logappend：表示log的写入是采用附加的方式，默认的是覆盖之前的文件
+
+** 3、关闭、启动 **
+> 启动：sudo service mongodb start
+
+> 关闭：sudo service mongodb stop
