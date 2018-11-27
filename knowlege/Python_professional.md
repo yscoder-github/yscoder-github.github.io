@@ -304,7 +304,7 @@ new_list = ['name1','name2']
 new_dict = dict.fromkeys(new_list, {'age':23})  # 将可迭代对象转换成字典dict
 
  # 如果key没有为name，则不会报错，返回{}
-new_dict.get('name', {})
+new_dict.get('name', {})``
 
 for key, value in new_dict.items():
     print(key, value)
@@ -315,4 +315,65 @@ new_dict.update(name='29', name3='30')
 #new_dict.update([('name','31')])
 #new_dict.update((('name','31'),))
 ```
+###### set 和 frozenset：
+同多数语言一样，set表示集合，最重要的特性就是**无序**，所以Python中的set不支持indexing，但支持len（set），x in set 等操作。
+
+set有两种类型，set和frozenset。
+
+set是可变的，有add（），remove（）等方法。既然是可变的，所以它不存在哈希值。
+
+frozenset是冻结的集合，它是不可变的，存在哈希值，好处是它可以作为字典的key，也可以作为其它集合的元素。缺点是一旦创建便不能更改，没有add，remove方法。
+
+
+``` python
+#set 集合 fronzenset (不可变集合) 无序， 不重复
+# s = set('abcdee')
+# s = set(['a','b','c','d','e'])
+s = {'a','b', 'c'}
+# s = frozenset("abcde") #frozenset 可以作为dict的key
+# print(s)
+
+#向set添加数据
+another_set = set("cef")
+re_set = s.difference(another_set)
+re_set = s - another_set
+re_set = s & another_set
+re_set = s | another_set
+
+#set性能很高
+# | & -  #集合运算
+print(re_set)
+
+print (s.issubset(re_set))
+# if "c" in re_set:
+#     print ("i am in set")
+
+fza=frozenset('a')
+adict={fza:1,'b':2} #正确
+setb=set('a')
+bdict={setb:1,'b':2} #错误
+
+还有一点需要注意，不管是set还是frozenset，Python都不支持创建一个整数的集合。
+seta=set(1) #错误
+setb=set（'1'）#正确
+```
+###### 补充：
+dict查找的性能远远大于list
+
+在list中随着list数据的增大 查找时间会增大
+
+在dict中查找元素不会随着dict的增大而增大
+
+dict的key或者set的值 都必须是可以hash的
+
+不可变对象 都是可hash的， 如str， fronzenset， tuple，自己实现的类 **\__hash__**
+
+dict的内存花销大，但是查询速度快， 自定义的对象 或者python内部的对象都是用dict包装的
+
+#### 四、对象引用、可变性和垃圾回收
+
+
+[异步编程](https://www.cnblogs.com/Eric15/articles/9769044.html)
+
+
 [引用地址](http://www.cnblogs.com/Eric15/articles/9749180.html)
