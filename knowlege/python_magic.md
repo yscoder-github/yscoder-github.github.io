@@ -30,7 +30,7 @@ __getattr__(self, name):
 ``` python
 __setattr__(self, name, value):
 ```
-　　与__getattr__(self, name)不同，__setattr__ 是一个封装的解决方案。无论属性是否存在，它都允许你定义对对属性的赋值行为，以为这你可以对属性的值进行个性定制。实现__setattr__时要避免"无限递归"的错误。
+　　与**\__getattr\__(self, name)**不同，**\__setattr\__** 是一个封装的解决方案。无论属性是否存在，它都允许你定义对对属性的赋值行为，以为这你可以对属性的值进行个性定制。实现**\__setattr\__**时要避免"无限递归"的错误。
 
 
 
@@ -77,6 +77,10 @@ class FunctionalList:
         # 获取前N个元素
         return self.values[:n]
 ```
+
+
+
+
 
 
 
